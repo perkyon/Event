@@ -1,5 +1,6 @@
-from telegram.ext import Application, CommandHandler
 from config import TOKEN
+from telegram.ext import Application, CommandHandler
+from telegram.ext import CommandHandler, CallbackQueryHandler
 from handlers.commands import login, my_inventory, start, add_employee_command, assign_tool_command
 
 def main():
@@ -13,6 +14,6 @@ def main():
     app.add_handler(CommandHandler("assign_tool", assign_tool_command))    # Назначить инструмент
 
     app.run_polling()
-
+    
 if __name__ == "__main__":
     main()
